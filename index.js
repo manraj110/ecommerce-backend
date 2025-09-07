@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const Item = require("./models/Item");
@@ -11,8 +12,7 @@ app.use(express.json());
 
 app.use(cors());
 
-const mongoURI =
-  "mongodb+srv://manrajsgandhi1_db_user:passwordtest123@ecommerce-dev.7lrk1jk.mongodb.net/?retryWrites=true&w=majority&appName=ecommerce-dev";
+const mongoURI = process.env.MONGO_URI;
 
 // This code connects to your database
 mongoose
